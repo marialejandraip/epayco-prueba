@@ -28,12 +28,12 @@ export default function FormIn() {
       <Row> 
         <Form.Group as={Col} controlId="exampleForm.ControlInput1">
           <Form.Label>Nombre</Form.Label>
-          <Form.Control type="email" required />
+          <Form.Control type="text" required />
         </Form.Group>
 
         <Form.Group as={Col} controlId="exampleForm.ControlInput1">
           <Form.Label>Apellido</Form.Label>
-          <Form.Control type="email"  required="True"/>
+          <Form.Control type="text"  required/>
         </Form.Group>
       </Row>
 
