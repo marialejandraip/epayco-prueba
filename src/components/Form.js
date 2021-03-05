@@ -1,9 +1,16 @@
 import React, {useState, useEffect } from 'react';
 import { Button, Form, Row, Col} from 'react-bootstrap';
 import styles from './form.module.css';
+import Alert from './Alert';
+import Cancel from './Cancel';
 
 
 export default function FormIn() {
+  const [show, setShow] = useState(false);
+  const [cancel, setCancel] = useState(false);
+
+  const handleShow = () => setShow(true);
+  const handleCancel = () => setCancel(true);
 
   const [countries, setCountries] =useState([])
 
@@ -42,7 +49,7 @@ export default function FormIn() {
           <Form.Label>Pais</Form.Label>
           <Form.Control as="select">
           {countries.map((country, index) => (
-            <option key={index} >{country.name}</option>
+            <option key={index}>{country.name}</option>
           ))}
           
           </Form.Control>
@@ -54,12 +61,21 @@ export default function FormIn() {
 
       </Row>
 
-  <Button variant="primary" type="submit">
+  <Button variant="primary" type="submit" onClick={handleShow}>
     Enviar
   </Button>
-  <Button variant="outline-primary" type="submit">
+  <Button variant="outline-primary" type="submit" onClick={handleCancel}>
     Cancelar
   </Button>
+    <Alert 
+    setShow={setShow}
+    show={show}
+    />
+    <Cancel 
+    setCancel={setCancel}
+    cancel={cancel}
+    />
+
 </Form>
     </div>
   )
