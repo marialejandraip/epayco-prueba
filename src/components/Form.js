@@ -20,8 +20,8 @@ export default function FormIn() {
   return (
 
     <div className={styles.form}>
-      <div>
-        <h3>Información del formulario</h3>
+      <div className={styles.title}>
+        <h4>Información del formulario</h4>
       </div>
       <p>Ingrese el titulo y la descripción que visualizarán los usuarios durante el proceso de pago</p>
     <Form>
@@ -33,7 +33,7 @@ export default function FormIn() {
 
         <Form.Group as={Col} controlId="exampleForm.ControlInput1">
           <Form.Label>Apellido</Form.Label>
-          <Form.Control type="email"  required/>
+          <Form.Control type="email"  required="True"/>
         </Form.Group>
       </Row>
 
